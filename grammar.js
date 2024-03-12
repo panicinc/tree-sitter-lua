@@ -72,7 +72,11 @@ module.exports = grammar({
         $.for_generic_statement,
         $.function_definition_statement,
         $.local_function_definition_statement,
+        $.import_statement,
       ),
+
+    // Playdate SDK addition
+    import_statement: ($) => seq("import", $.string),
 
     local_function_definition_statement: ($) =>
       seq("local", "function", field("name", $.identifier), $._function_body),
@@ -182,7 +186,25 @@ module.exports = grammar({
     attribute: ($) => seq("<", field("name", $.identifier), ">"),
 
     variable_assignment: ($) =>
-      seq($.variable_list, "=", alias($._value_list, $.expression_list)),
+      seq(
+        $.variable_list,
+        choice(
+          "=",
+          // Playdate SDK additions
+          "+=",
+          "-=",
+          "*=",
+          "/=",
+          "//=",
+          "%=",
+          "<<=",
+          ">>=",
+          "&=",
+          "|=",
+          "^=",
+        ),
+        alias($._value_list, $.expression_list)
+      ),
     variable_list: ($) => _list($.variable, ","),
 
     empty_statement: () => ";",
