@@ -108,6 +108,10 @@
         "named": true
       },
       {
+        "type": "import_statement",
+        "named": true
+      },
+      {
         "type": "label_statement",
         "named": true
       },
@@ -719,6 +723,21 @@
     }
   },
   {
+    "type": "import_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "label_statement",
     "named": true,
     "fields": {
@@ -1077,7 +1096,15 @@
     "named": false
   },
   {
+    "type": "%=",
+    "named": false
+  },
+  {
     "type": "&",
+    "named": false
+  },
+  {
+    "type": "&=",
     "named": false
   },
   {
@@ -1093,7 +1120,15 @@
     "named": false
   },
   {
+    "type": "*=",
+    "named": false
+  },
+  {
     "type": "+",
+    "named": false
+  },
+  {
+    "type": "+=",
     "named": false
   },
   {
@@ -1102,6 +1137,10 @@
   },
   {
     "type": "-",
+    "named": false
+  },
+  {
+    "type": "-=",
     "named": false
   },
   {
@@ -1118,6 +1157,14 @@
   },
   {
     "type": "//",
+    "named": false
+  },
+  {
+    "type": "//=",
+    "named": false
+  },
+  {
+    "type": "/=",
     "named": false
   },
   {
@@ -1138,6 +1185,10 @@
   },
   {
     "type": "<<",
+    "named": false
+  },
+  {
+    "type": "<<=",
     "named": false
   },
   {
@@ -1165,6 +1216,10 @@
     "named": false
   },
   {
+    "type": ">>=",
+    "named": false
+  },
+  {
     "type": "[",
     "named": false
   },
@@ -1174,6 +1229,10 @@
   },
   {
     "type": "^",
+    "named": false
+  },
+  {
+    "type": "^=",
     "named": false
   },
   {
@@ -1222,6 +1281,10 @@
   },
   {
     "type": "if",
+    "named": false
+  },
+  {
+    "type": "import",
     "named": false
   },
   {
@@ -1286,6 +1349,10 @@
   },
   {
     "type": "|",
+    "named": false
+  },
+  {
+    "type": "|=",
     "named": false
   },
   {

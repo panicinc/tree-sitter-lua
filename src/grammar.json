@@ -1,4 +1,5 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "lua",
   "word": "identifier",
   "rules": {
@@ -167,6 +168,23 @@
         {
           "type": "SYMBOL",
           "name": "local_function_definition_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "import_statement"
+        }
+      ]
+    },
+    "import_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "import"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
         }
       ]
     },
@@ -918,8 +936,57 @@
           "name": "variable_list"
         },
         {
-          "type": "STRING",
-          "value": "="
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "="
+            },
+            {
+              "type": "STRING",
+              "value": "+="
+            },
+            {
+              "type": "STRING",
+              "value": "-="
+            },
+            {
+              "type": "STRING",
+              "value": "*="
+            },
+            {
+              "type": "STRING",
+              "value": "/="
+            },
+            {
+              "type": "STRING",
+              "value": "//="
+            },
+            {
+              "type": "STRING",
+              "value": "%="
+            },
+            {
+              "type": "STRING",
+              "value": "<<="
+            },
+            {
+              "type": "STRING",
+              "value": ">>="
+            },
+            {
+              "type": "STRING",
+              "value": "&="
+            },
+            {
+              "type": "STRING",
+              "value": "|="
+            },
+            {
+              "type": "STRING",
+              "value": "^="
+            }
+          ]
         },
         {
           "type": "ALIAS",
@@ -2757,6 +2824,6 @@
     "prefix_expression",
     "expression",
     "statement"
-  ]
+  ],
+  "reserved": {}
 }
-
